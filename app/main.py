@@ -7,6 +7,9 @@ class MyHandler(http.server.SimpleHTTPRequestHandler):
   def do_POST(self):
     content_length = int(self.headers['Content-Length'])
     post_data = json.loads(self.rfile.read(content_length))
+
+    print(post_data)
+
     self.send_response(200)
     self.send_header("Content-Type", "application/json")
     self.end_headers()
@@ -15,6 +18,8 @@ class MyHandler(http.server.SimpleHTTPRequestHandler):
   def do_GET(self):
     parsed_url = urlparse(self.path)
     query_params = parse_qs(parsed_url.query)
+
+    print(query_params)
 
     self.send_response(200)
     self.send_header("Content-Type", "application/json")
