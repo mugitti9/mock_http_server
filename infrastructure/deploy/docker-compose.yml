@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  app:
+    container_name: "browser-mock"
+    build:
+      context: ../../
+    platform: linux/amd64
+    image: asia-northeast1-docker.pkg.dev/sandbox-syuta-mugikura/browser-mock-prd-docker-image/browser-mock
+    ports:
+      - "8080:8080"
+    environment:
+      PORT: 8080
+    restart: always

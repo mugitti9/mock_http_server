@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  app:
+    container_name: "browser-mock"
+    build:
+      context: .
+    ports:
+      - "4000:4000"
+    environment:
+      PORT: 4000
+      SLACK_WEBHOOK_URL: ${SLACK_WEBHOOK_URL}

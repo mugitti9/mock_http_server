@@ -1,6 +1,6 @@
 resource "google_storage_bucket" "terraform-state-store" {
-  name = var.name
-  location = var.location
+  name          = var.name
+  location      = var.location
   storage_class = "REGIONAL"
 
   versioning {

@@ -2,3 +2,10 @@
 **.tfstate
 **.lock.hcl
 **.lock.info
+
+.envrc
+*.hcl
+*.terraform
+
+__pycache__
+.DS_Store
